@@ -32,33 +32,41 @@ class Form extends Component {
     prevStep = () => {
         const { step } = this.state;
         this.setState({
-            step: step - 1
+            step: step - 1,
+            email_error : " ",
+            mobile_no_error : " "
         })
     }
 
     validate = () => {
         let formIsValid = true;
 
-        if(this.state.email == " " || this.state.mobile_no == " "){
+        if(!(this.state.email)){
            formIsValid = false;
-           this.setState({ email_error: "Cannot be Empty!" , mobile_no_error : "Cannot be Empty"});
+           this.setState({ email_error : "Cannot be Empty!"});
         }
 
-            if (typeof (this.state.email) !== "undefined") {
-                let lastAtPos = this.state.email.lastIndexOf('@');
-                let lastDotPos = this.state.email.lastIndexOf('.');
+        else if (typeof (this.state.email) !== "undefined") {
+            let lastAtPos = this.state.email.lastIndexOf('@');
+            let lastDotPos = this.state.email.lastIndexOf('.');
 
-                if (!(lastAtPos < lastDotPos && lastAtPos > 0 && this.state.email.indexOf('@@') === -1 && lastDotPos > 2 && (this.state.email.length - lastDotPos) > 2)) {
-                    formIsValid = false;
-                    this.setState({ email_error: "Email is not valid!" })
-                }
-            } 
-            if (typeof (this.state.mobile_no) !== "undefined") {
-                if (!(this.state.mobile_no.match(/^[0-9]{10}$/))) {
-                    formIsValid = false;
-                    this.setState({ mobile_no_error: "Please enter valid mobile no!"})
-                }
+            if (!(lastAtPos < lastDotPos && lastAtPos > 0 && this.state.email.indexOf('@@') === -1 && lastDotPos > 2 && (this.state.email.length - lastDotPos) > 2)) {
+                formIsValid = false;
+                this.setState({ email_error: "Email is not Valid!" })
             }
+        } 
+
+        if (!(this.state.mobile_no)) {
+            formIsValid = false;
+            this.setState({ mobile_no_error : "Cannot be Empty!" });
+        }
+
+        else if (typeof (this.state.mobile_no) !== "undefined") {
+            if (!(this.state.mobile_no.match(/^[0-9]{10}$/))) {
+                formIsValid = false;
+                this.setState({ mobile_no_error: "Please Enter a Valid Mobile No!"})
+            }
+        }
 
        return formIsValid;
    }
