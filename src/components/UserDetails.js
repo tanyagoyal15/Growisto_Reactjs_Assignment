@@ -7,7 +7,6 @@ import Button from "./Button";
 
 
 export class UserDetails extends Component {
-
     continue = e => {
         e.preventDefault();
         this.props.nextStep();

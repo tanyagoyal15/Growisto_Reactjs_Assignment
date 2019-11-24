@@ -1,6 +1,6 @@
 import React from "react";
 
-const Success = () => {
+const FormSubmitted = () => {
     return (
         <div>
             <h1>Thankyou for your response.</h1>
@@ -9,4 +9,4 @@ const Success = () => {
     )
 }
 
-export default Success;
+export default FormSubmitted;

@@ -1,7 +1,7 @@
 import React , {Component} from "react";
 import Register from "./Register";
 import UserDetails from "./UserDetails";
-import Success from '../components/Success';
+import FormSubmitted from './FormSubmitted';
 
 
 class Form extends Component {
@@ -107,7 +107,7 @@ class Form extends Component {
                 />
             )
             case 3 : return (
-                <Success />
+                <FormSubmitted />
             )
         }
     }

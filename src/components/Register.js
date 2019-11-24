@@ -7,10 +7,10 @@ import Button from "./Button";
 
 export class Register extends Component {
 
-    continue = e => {
-        e.preventDefault();
-        this.props.nextStep();
-    }
+    // continue = e => {
+    //     e.preventDefault();
+    //     this.props.nextStep();
+    // }
 
     render() {
         const { values } = this.props;
