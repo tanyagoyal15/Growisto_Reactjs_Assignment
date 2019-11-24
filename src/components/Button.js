@@ -3,7 +3,7 @@ import RaisedButton from "material-ui/RaisedButton";
 
 const style = {
     button : {
-        margin: 40
+        margin: 40 
     }
 }
 const Button = (props) => {
