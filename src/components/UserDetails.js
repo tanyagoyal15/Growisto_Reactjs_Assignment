@@ -3,12 +3,10 @@ import React, { Component } from 'react'
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import AppBar from "material-ui/AppBar";
 import {List, ListItem} from "material-ui/List";
-// import Button from "material-ui/Button";
-import Input from "../components/Input";
-import Button from "../components/Button";
+import Button from "./Button";
 
 
-export class UserData extends Component {
+export class UserDetails extends Component {
 
     continue = e => {
         e.preventDefault();
@@ -21,31 +19,27 @@ export class UserData extends Component {
     }
 
     render() {
-        const email = this.props.email;
-        const mobile_no = this.props.mobile_no;
-        // const userData = this.props;
+        const { values } = this.props;
         return (
             <MuiThemeProvider>
                 <React.Fragment>
                     <AppBar title="Confirm Your Details"></AppBar>
-                    <ul>
-                        <li>{email}</li>
-                        <li>{mobile_no}</li>
-                    </ul>
-                    {/* <List>
+                    <List>
                         <ListItem 
                             primaryText = "Email"
-                        > {values.email} </ListItem>
+                            secondaryText = {values.email}
+                        />
                         <ListItem
                             primaryText="Mobile No"
-                        >{values.mobile_no}</ListItem>
-                    </List> */}
+                            secondaryText = {values.mobile_no}
+                        />
+                    </List>
                     <Button
                         title={'Submit'}
                         action={this.continue}
                     />
                     <Button
-                        title={'Back'}
+                        title={'Edit'}
                         action={this.back}
                     />
                 </React.Fragment>
@@ -54,4 +48,4 @@ export class UserData extends Component {
     }
 }
 
-export default UserData
+export default UserDetails

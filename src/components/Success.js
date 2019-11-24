@@ -2,7 +2,10 @@ import React from "react";
 
 const Success = () => {
     return (
-        <h1>Form Submitted</h1>
+        <div>
+            <h1>Thankyou for your response.</h1>
+            <h2>Your form is submitted</h2>
+        </div>
     )
 }
 

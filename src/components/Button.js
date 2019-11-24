@@ -1,13 +1,19 @@
-import React , { Component } from "react";
+import React from "react";
+import RaisedButton from "material-ui/RaisedButton";
 
-
+const style = {
+    button : {
+        margin: 40
+    }
+}
 const Button = (props) => {
     return (
-        <button
-            style={props.style}
+        <RaisedButton
+            primary = {true}
+            style={style.button}
             onClick={props.action}>
             {props.title}
-        </button>
+        </RaisedButton>
     )
 }
 
