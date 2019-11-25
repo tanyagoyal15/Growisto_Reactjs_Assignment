@@ -12,8 +12,8 @@ class Form extends Component {
             step : 1,
             email: "",
             mobile_no: "",
-            email_error : " ",
-            mobile_no_error : " "
+            email_error : "",
+            mobile_no_error : ""
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
